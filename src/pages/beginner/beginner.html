@@ -6,21 +6,26 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-buttons start>
       <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Beginner Module</ion-title>
+    <ion-title>Module</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
-  <ion-card class="card-list">
-    hallo
+<ion-content class="dark">
+  <ion-card class="card-list" *ngFor="let i of x" tappable (click)="detail()">
+    <ion-item detail-push>
+        <ion-avatar item-start>
+          <img src="https://scontent.fcgk8-1.fna.fbcdn.net/v/t1.0-1/p160x160/12043128_10204576191636009_3203304241782860620_n.jpg?_nc_cat=0&_nc_eui2=AeHocRP1KRq9R7lrAxIjWumP7Oui8gIN9T63WQFHEY52dKoKhD9fAgd4-hcVJp009xjFGS_7K7ai22IPic2KRRnQpZxkvNU5_RBZRHN0RsxjzcknMCllZ-iO9r-gMgXHHeE&oh=30419d5e11be2bbc22edde2b304d054f&oe=5BEA8280">
+        </ion-avatar>
+        <h1>Halloooo</h1>
+    </ion-item>
     <div class="card-footer">
       footer
     </div>
