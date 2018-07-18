@@ -3,9 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list';
-// import { BeginnerPage } from '../pages/beginner/beginner';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,9 +10,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: string = 'BeginnerPage';
+  rootPage: string = 'ModulePage';
 
-  pages: Array<{title: string, component: string}>;
+  pages: Array<{title: string, component: string, kelas:string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -24,7 +21,11 @@ export class MyApp {
     this.pages = [
       // { title: 'Home', component: HomePage },
       // { title: 'List', component: ListPage },
-      { title: 'Beginner', component: 'BeginnerPage' }
+      { title: 'Novice', component: 'ModulePage', kelas: 'Novice' },
+      { title: 'Advance', component: 'ModulePage', kelas: 'Advance' },
+      { title: 'Competent', component: 'ModulePage', kelas: 'Competent' },
+      { title: 'Proficient', component: 'ModulePage', kelas: 'Proficient' },
+      { title: 'Expert', component: 'ModulePage', kelas: 'Expert' }
     ];
 
   }
@@ -38,9 +39,13 @@ export class MyApp {
     });
   }
 
+  refresh(){
+    window.location.reload();
+  }
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component,{kelas:page.kelas});
   }
 }

@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-navbar color="unpam">
+      <ion-buttons start>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu" color="light"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title ion-text color="light">Module-{{title}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="dark">
+    <ion-card class="card-list" *ngFor="let i of x" tappable (click)="detail()">
+      <ion-item detail-push>
+          <ion-avatar item-start>
+            <div class="ava">
+              <h1>{{i}}</h1>
+            </div>
+            <!-- <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"> -->
+          </ion-avatar>
+          <h1>Materi-{{title}} {{i}}</h1>
+      </ion-item>
+      <div class="card-footer" text-right>
+         Last seen: <ion-icon name="eye"></ion-icon>
+      </div>
+    </ion-card>
+  </ion-content>
+  

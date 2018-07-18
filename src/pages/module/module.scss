@@ -1,0 +1,30 @@
+page-module {
+    ion-content{
+        background-color: black;
+        .card-list{
+            border-radius: 8px;
+            height: 10vh;
+            position: relative;
+            .ava{
+                width: 30px;
+                height: 30px;
+                background-color: green;
+                border-radius: 50%;
+                text-align: center;
+                color: white;
+                position: absolute;
+                top: 10px;
+            }
+            .card-footer{
+                padding-left: 5px;
+                padding-right: 5px;
+                width: 100%;
+                background-color: rgb(243, 243, 243);
+                position: absolute;
+                bottom: 0;
+            }
+            
+        }
+
+    }
+}
