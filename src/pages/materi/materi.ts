@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,10 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MateriPage {
 
+  @ViewChild('videoPlayer') videoplayer: any;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+  
+  toggleVideo(event: any) {
+    let video = this.videoplayer.nativeElement;
+    video.src = 'http://techslides.com/demos/sample-videos/small.mp4';
+    video.play();
   }
 
   ionViewDidLoad() {
+    let video = this.videoplayer.nativeElement;
+    video.src = 'http://techslides.com/demos/sample-videos/small.mp4';
+    video.play();
   }
 
 }
